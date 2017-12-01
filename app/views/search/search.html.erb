@@ -1,0 +1,11 @@
+<h1>Countries Search</h1>
+
+<ul>
+  <% @countries.each do |country| %>
+    <li>
+      <h3>
+        <%= country.name %>
+      </h3>
+    </li>
+  <% end %>
+</ul>
