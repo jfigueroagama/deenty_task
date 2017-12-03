@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'countries#index'
   resources :countries, only: [:index, :show]
   get "search", to: "search#search"
+  get "search/typeahead/:term" => "search#typeahead"
 end

@@ -1,11 +1,15 @@
-<h1>Countries Search</h1>
+<h1>Search Results for: <i><%= params[:term] %></i></h1>
 
-<ul>
-  <% @countries.each do |country| %>
-    <li>
-      <h3>
-        <%= country.name %>
-      </h3>
-    </li>
+<% if @countries %>
+  <ul class="search_results">
+    <% @countries.each do |country| %>
+      <li>
+        <h3>
+          <%= link_to country.name, controller: "countries", action: "show", id: country.id %>
+        </h3>
+      </li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>Your search did not match any documents.</p>
   <% end %>
-</ul>
