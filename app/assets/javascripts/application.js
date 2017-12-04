@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-typeahead-rails
 //= require_tree .
 
 var ready = function() {
@@ -35,7 +34,7 @@ var ready = function() {
       .fail(function() { console.log('error') });
 
   $("#term").typeahead(null, {
-    name: "country",
+    name: "doctor",
     displayKey: "name",
     source: engine.ttAdapter()
   })

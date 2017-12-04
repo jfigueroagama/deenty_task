@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
 
   def index
-    @countries = Country.all
+    @countries = Country.paginate(page: params[:page])
   end
 
   def show
@@ -9,7 +9,7 @@ class CountriesController < ApplicationController
   end
 
   private
-    def article_params
+    def country_params
       params.require(:country).permit :name
     end
 end

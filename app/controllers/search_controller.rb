@@ -2,20 +2,20 @@ class SearchController < ApplicationController
 
   def search
     if params[:term].nil?
-      @countries = []
+      @doctors = []
     else
       term = params[:term]
-      @countries = Country.search term, fields: [:name], highlight:  true
+      @doctors = Doctor.search term, fields: [:name], highlight:  true, index_name: [Doctor]
     end
   end
 
   def typeahead
-    render json: Country.search(params[:term], {
+    render json: Doctor.search(params[:term], {
       fields: ["name"],
       limit: 10,
       load: false,
       misspellings: {below: 5},
-    }).map do |country| { name: country.name, value: country.id } end
+    }).map do |doctor| { title: doctor.name, value: doctor.id } end
   end
 
 end

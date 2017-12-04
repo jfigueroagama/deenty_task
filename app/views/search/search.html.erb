@@ -1,11 +1,11 @@
-<h1>Search Results for: <i><%= params[:term] %></i></h1>
+<h1>Search Results for:  <i><%= params[:term] %></i></h1>
 
-<% if @countries %>
+<% if @doctors %>
   <ul class="search_results">
-    <% @countries.each do |country| %>
+    <% @doctors.each do |doctor| %>
       <li>
         <h3>
-          <%= link_to country.name, controller: "countries", action: "show", id: country.id %>
+          <%= link_to doctor.name, controller: "doctors", action: "show", id: doctor.id %>, <%= doctor.class.name %>
         </h3>
       </li>
     <% end %>

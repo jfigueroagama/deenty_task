@@ -1,12 +1,12 @@
-<h1>Countries</h1>
+<h1>Available Doctors</h1>
 
 <%= will_paginate %>
 
 <ul>
-  <% @countries.each do |country| %>
+  <% @doctors.each do |doctor| %>
     <li>
       <h3>
-        <%= country.name %>
+        <%= doctor.name %>
       </h3>
     </li>
   <% end -%>
