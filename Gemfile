@@ -21,6 +21,7 @@ gem 'faker',                     '1.8.4'
 gem 'elasticsearch-model',       '5.0.1'
 gem 'elasticsearch-rails',       '5.0.1'
 gem 'searchkick',                '2.4.0'
+gem 'twitter-typeahead-rails',   '0.11.1'
 gem 'will_paginate',             '3.1.6'
 gem 'bootstrap-will_paginate',   '1.0.0'
 

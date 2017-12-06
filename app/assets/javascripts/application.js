@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require twitter/typeahead
 //= require_tree .
 
 var ready = function() {
@@ -33,9 +34,9 @@ var ready = function() {
       .done(function() { console.log('success'); })
       .fail(function() { console.log('error') });
 
-  $("#term").typeahead(null, {
+  $("term").typeahead(null, {
     name: "doctor",
-    displayKey: "name",
+    displayKey: "name^5",
     source: engine.ttAdapter()
   })
 };
