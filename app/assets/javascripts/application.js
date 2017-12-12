@@ -25,6 +25,7 @@ var ready = function() {
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       remote: {
           url: '../search/typeahead/%QUERY'
+          wildcard: '%QUERY'
       }
   });
 
@@ -34,7 +35,7 @@ var ready = function() {
       .done(function() { console.log('success'); })
       .fail(function() { console.log('error') });
 
-  $("term").typeahead(null, {
+  $("#term").typeahead(null, {
     name: "doctor",
     displayKey: "name^5",
     source: engine.ttAdapter()
